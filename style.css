@@ -1,44 +1,48 @@
-* {
+/* Estilo geral */
+body {
+    font-family: "Comic Sans MS", "Arial", sans-serif;
+    background-color: #ffe6f2; /* Fundo rosa claro */
+    color: #5a2961; /* Roxo escuro */
+    text-align: center;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
 }
 
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f1f1f1;
-    color: #333;
-    padding: 20px;
-}
-
+/* Container centralizado */
 .container {
-    max-width: 600px;
-    margin: 0 auto;
+    background-color: #fff0f5; /* Rosa bem claro */
     padding: 20px;
-    background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin: 50px auto;
+    border-radius: 15px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
+    width: 80%;
+    max-width: 500px;
 }
 
+/* Título */
 h1 {
-    color: #ff69b4;
-    text-align: center;
-    font-size: 2rem;
+    color: #d63384; /* Rosa escuro */
+    font-size: 2em;
 }
 
-h2 {
-    margin-top: 20px;
-    color: #ff69b4;
-}
-
+/* Parágrafo */
 p {
-    font-size: 1rem;
-    margin: 10px 0;
+    font-size: 1.2em;
+    color: #7a3b64; /* Roxo médio */
 }
 
-.questions {
-    background-color: #f8f8f8;
-    padding: 15px;
-    border-radius: 5px;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+/* Botão estilizado */
+button {
+    background-color: #ff85a2; /* Rosa pastel */
+    color: white;
+    font-size: 1.2em;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background-color: #ff6699; /* Rosa um pouco mais forte */
 }
