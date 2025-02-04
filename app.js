@@ -1,94 +1,93 @@
-// Função que mostra a pergunta ao usuário e exibe o resultado com base na resposta
-function fazerPergunta(pergunta, callback) {
-    let resposta = prompt(pergunta);
-    callback(resposta);
+function executarCodigo() {
+    console.log("🌸 Código JavaScript Executado! 🌸");
+
+    // 1. Criar variável nome e exibir o valor
+    let nome = "Gilrlane";
+    console.log(nome);
+
+    // 2. Criar variáveis idade e altura e exibir os valores
+    let idade = 25;
+    let altura = 1.75;
+    console.log(`Idade: ${idade}, Altura: ${altura}m`);
+
+    // 3. Calcular preço com desconto
+    let preco = 50;
+    let desconto = 0.2;
+    let precoFinal = preco - (preco * desconto);
+    console.log(`Preço com desconto: R$ ${precoFinal.toFixed(2)}`);
+
+    // 4. Verificar temperatura e exibir mensagem correspondente
+    let temperatura = 30;
+    console.log(temperatura > 25 ? "Está calor!" : "Está fresco!");
+
+    // 5. Verificar se a pessoa é maior de idade
+    let idadePessoa = 17;
+    console.log(idadePessoa >= 18 ? "Você é maior de idade." : "Você é menor de idade.");
+
+    // 6. Verificar nota do aluno e exibir resultado
+    let nota = 6;
+    if (nota >= 7) {
+        console.log("Aprovado");
+    } else if (nota >= 5) {
+        console.log("Recuperação");
+    } else {
+        console.log("Reprovado");
+    }
+
+    // 7. Comparar dois números e exibir mensagem correspondente
+    let numero1 = 10;
+    let numero2 = 15;
+    console.log(numero1 === numero2 ? "Os números são iguais." : "Os números são diferentes.");
+
+    // 8. Exibir mensagem com nome e idade utilizando concatenação
+    let nomeUsuario = "Gilrlane";
+    let idadeUsuario = 25;
+    console.log(`Olá, meu nome é ${nomeUsuario} e eu tenho ${idadeUsuario} anos.`);
+
+    // 9. Criar loop que imprime números de 1 a 10
+    for (let i = 1; i <= 10; i++) {
+        console.log(i);
+    }
+
+    // 10. Criar loop que pede ao usuário para digitar um número até que ele digite 5
+    let numeroDigitado;
+    while (numeroDigitado != 5) {
+        numeroDigitado = Number(prompt("Digite um número (digite 5 para sair):"));
+    }
+    console.log("Você digitou 5, encerrando o programa.");
+
+    // 11. Criar loop que imprime a tabuada do número 7 de 1 a 10
+    console.log("Tabuada do 7:");
+    for (let i = 1; i <= 10; i++) {
+        console.log(`7 x ${i} = ${7 * i}`);
+    }
+
+    // 12. Criar loop que exibe todos os números pares de 0 a 20
+    console.log("Números pares de 0 a 20:");
+    for (let i = 0; i <= 20; i += 2) {
+        console.log(i);
+    }
+
+    // 13. Criar função que calcula a área de um círculo com base no raio
+    function calcularAreaCirculo(raio) {
+        return Math.PI * Math.pow(raio, 2);
+    }
+    let raio = 5;
+    console.log(`A área do círculo com raio ${raio} é: ${calcularAreaCirculo(raio).toFixed(2)}`);
+
+    // 14. Criar um programa que calcula a soma de dois números e imprime o resultado
+    function somarNumeros(a, b) {
+        return a + b;
+    }
+    let resultadoSoma = somarNumeros(10, 20);
+    console.log(`A soma dos números é: ${resultadoSoma}`);
+
+    // 15. Refatorar o código para boas práticas
+    function somar(x, y) {
+        return x + y;
+    }
+    let numeroA = 10;
+    let numeroB = 20;
+    let resultado = somar(numeroA, numeroB);
+    console.log(`O resultado da soma é: ${resultado}`);
 }
-
-// Pergunta 1 - Nome
-fazerPergunta("Qual é o seu nome?", function(resposta) {
-    document.getElementById("nome").textContent = `Nome: ${resposta}`;
-    
-    // Pergunta 2 - Idade e Altura
-    fazerPergunta("Qual é a sua idade?", function(respostaIdade) {
-        let idade = parseInt(respostaIdade);
-        document.getElementById("idade").textContent = `Idade: ${idade}`;
-        
-        fazerPergunta("Qual é a sua altura?", function(respostaAltura) {
-            let altura = parseFloat(respostaAltura);
-            document.getElementById("altura").textContent = `Altura: ${altura}`;
-
-            // Pergunta 3 - Verificando a temperatura
-            fazerPergunta("Qual a temperatura agora?", function(respostaTemperatura) {
-                let temperatura = parseInt(respostaTemperatura);
-                let clima = temperatura > 25 ? "Está calor!" : "Está fresco!";
-                document.getElementById("temperatura").textContent = `Clima: ${clima}`;
-
-                // Pergunta 4 - Verificando maioridade
-                let maioridade = idade >= 18 ? "Você é maior de idade" : "Você é menor de idade";
-                document.getElementById("maioridade").textContent = `Maioridade: ${maioridade}`;
-
-                // Pergunta 5 - Nota do aluno
-                fazerPergunta("Qual é a sua nota?", function(respostaNota) {
-                    let nota = parseInt(respostaNota);
-                    let resultadoNota = (nota >= 7) ? "Aprovado" : (nota >= 5) ? "Recuperação" : "Reprovado";
-                    document.getElementById("nota").textContent = `Nota: ${resultadoNota}`;
-                    
-                    // Pergunta 6 - Números para comparação
-                    fazerPergunta("Escolha um número para comparar:", function(respostaNumero) {
-                        let numero1 = parseInt(respostaNumero);
-                        let numero2 = 20;
-                        let comparacao = (numero1 === numero2) ? "Os números são iguais" : "Os números são diferentes";
-                        document.getElementById("comparacao").textContent = `Comparação: ${comparacao}`;
-
-                        // Pergunta 7 - Digite um número
-                        fazerPergunta("Digite um número :", function(respostaNumero2) {
-                            let numero = parseInt(respostaNumero2);
-                            if (numero === 5) {
-                                document.getElementById("numero").textContent = "Você digitou 5!";
-                            } else {
-                                document.getElementById("numero").textContent = `Você digitou ${numero}, mas o número correto era 5.`;
-                            }
-
-                            // Pergunta 8 - Tabuada do 7
-                            let tabuada = "";
-                            for (let i = 1; i <= 10; i++) {
-                                tabuada += `7 x ${i} = ${7 * i} <br>`;
-                            }
-                            document.getElementById("tabuada").innerHTML = `Tabuada do 7:<br>${tabuada}`;
-
-                            // Pergunta 9 - Números pares
-                            let pares = "";
-                            for (let i = 0; i <= 20; i += 2) {
-                                pares += `${i} `;
-                            }
-                            document.getElementById("pares").textContent = `Números pares de 0 a 20: ${pares}`;
-
-                            // Pergunta 10 - Cálculo da área do círculo
-                            fazerPergunta("Qual o raio do círculo?", function(respostaRaio) {
-                                let raio = parseFloat(respostaRaio);
-                                function calcularAreaCirculo(raio) {
-                                    return Math.PI * Math.pow(raio, 2);
-                                }
-                                document.getElementById("areaCirculo").textContent = `Área do círculo (raio ${raio}): ${calcularAreaCirculo(raio)}`;
-
-                                // Pergunta 11 - Soma de dois números
-                                fazerPergunta("Qual é o primeiro número para somar?", function(respostaNumero1) {
-                                    let numero1 = parseInt(respostaNumero1);
-                                    fazerPergunta("Qual é o segundo número para somar?", function(respostaNumero2) {
-                                        let numero2 = parseInt(respostaNumero2);
-                                        let soma = numero1 + numero2;
-                                        document.getElementById("soma").textContent = `A soma de ${numero1} e ${numero2} é: ${soma}`;
-                                        
-                                        // Pergunta 12 - Refatoração
-                                        let resultado = soma;
-                                        document.getElementById("refatoracao").textContent = `Resultado da soma refatorada: ${resultado}`;
-                                    });
-                                });
-                            });
-                        });
-                    });
-                });
-            });
-        });
-    });
-});
