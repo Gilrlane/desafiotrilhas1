@@ -21,7 +21,7 @@ function executarCodigo() {
     console.log(temperatura > 25 ? "Está calor!" : "Está fresco!");
 
     // 5. Verificar se a pessoa é maior de idade
-    let idadePessoa = 17;
+    let idadePessoa = 25;
     console.log(idadePessoa >= 18 ? "Você é maior de idade." : "Você é menor de idade.");
 
     // 6. Verificar nota do aluno e exibir resultado
