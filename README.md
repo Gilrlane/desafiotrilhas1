@@ -17,4 +17,4 @@ Este repositório contém diversos exercícios de **JavaScript** que abrangem co
 ## 📂 Como executar os exercícios  
 1. Clone o repositório:  
    ```sh
-   git clone https://github.com/seu-usuario/nome-do-repositorio.git
+   git clone https://github.com/Gilrlane/desafiotrilhas1
